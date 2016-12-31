@@ -9,6 +9,9 @@ const inventors = [
 
 const guitarists = ['Jason, Becker', 'Marty, Friedman', 'Paul, Gilbert', 'Chick, Corea', 'Aldi, Meola', 'John, McLauglin', 'Chris, Impelliterri', 'Yngwie, Malmsteen', 'Randy, Rhoads', 'David, Micic', 'Paul, Wardingham'];
 
+const guitars = ['Ibanez', 'Fender', 'Suhr', 'Mayones', 'Suhr', 'Rickenbecker', 'Caparison', 'Laguna', 'Fender', 'Suhr', 'Ibanez'];
+
+
 // filter the list of inventors for those who lived during 1500's
 
 // variant 1
@@ -62,6 +65,26 @@ const guitarists = ['Jason, Becker', 'Marty, Friedman', 'Paul, Gilbert', 'Chick,
 // Create a list of coulevards in Paris that contains 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
-const category = document.querySelector('.mw-category');
-const links = Array.from(category.querySelectorAll('a'));
-const de = links.map( link => link.textContent).filter(street => street.includes('de')); 
+// const category = document.querySelector('.mw-category');
+// const links = Array.from(category.querySelectorAll('a'));
+// var de = links.map( link => link.textContent).filter(street => street.includes('de')); 
+
+// sort guitarists alphabetically by last name
+
+// const sorted = guitarists.sort(function(lastOne, nextOne){
+//  	const [aLast, aFirst] = lastOne.split(', ');
+//  	const [bLast, bFirst] = nextOne.split(', ');
+//  	return aLast > bLast ? 1 : -1;
+// })
+// console.log(sorted);
+
+// sum up the instances of each guitar model
+
+const result = guitars.reduce(function(tmp, guitar){
+	if(!tmp[guitar]){
+		tmp[guitar] = 0;
+	}
+	tmp[guitar]++;
+	return tmp;
+}, {}) 
+console.log(result);
