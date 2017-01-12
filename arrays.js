@@ -11,6 +11,20 @@ const guitarists = ['Jason, Becker', 'Marty, Friedman', 'Paul, Gilbert', 'Chick,
 
 const guitars = ['Ibanez', 'Fender', 'Suhr', 'Mayones', 'Suhr', 'Rickenbecker', 'Caparison', 'Laguna', 'Fender', 'Suhr', 'Ibanez'];
 
+const comments = [
+	{text: 'Love this!', id: 523423},
+	{text: 'Super good', id: 823423},
+	{text: 'You are the best', id: 2039842},
+	{text: 'Nice Nice Nice!', id: 542328}
+];
+
+const people = [
+	{name: 'Wes', year: 1988},
+	{name: 'Kait', year: 1986},
+	{name: 'Irv', year: 1970},
+	{name: 'Lux', year: 2015}
+];
+
 
 // filter the list of inventors for those who lived during 1500's
 
@@ -80,11 +94,68 @@ const guitars = ['Ibanez', 'Fender', 'Suhr', 'Mayones', 'Suhr', 'Rickenbecker', 
 
 // sum up the instances of each guitar model
 
-const result = guitars.reduce(function(tmp, guitar){
-	if(!tmp[guitar]){
-		tmp[guitar] = 0;
-	}
-	tmp[guitar]++;
-	return tmp;
-}, {}) 
-console.log(result);
+// const result = guitars.reduce(function(tmp, guitar){
+// 	if(!tmp[guitar]){
+// 		tmp[guitar] = 0;
+// 	}
+// 	tmp[guitar]++;
+// 	return tmp;
+// }, {}) 
+// console.log(result);
+
+// is at least one person 19?
+
+// variant 1
+// const isAdult = people.some(function(person){
+// 	const currentYear = (new Date()).getFullYear();
+// 	// console.log(currentYear);
+// 	if(currentYear - person.year >= 19){
+// 		return true;
+// 	}
+// })
+// console.log({isAdult});
+
+// variant 2
+// const isAdult = people.some((person) => {
+// 	const currentYear = (new Date()).getFullYear();
+// 	return currentYear - person.year >= 19;
+// })
+
+// console.log({isAdult});
+
+// variant 3
+// const isAdult = people.some(person => (new Date()).getFullYear() - person.year >= 19);
+// console.log({isAdult});
+
+// is everyone 19?
+// const allAdults = people.every(function(person){
+// 	const currentYear = (new Date()).getFullYear();
+// 	if(currentYear - person.year >= 19){
+// 		return true;
+// 	}
+// });
+// console.log(allAdults);
+
+// find the comment with the id 823423
+
+// variant 1
+// const comment = comments.find(function(comment){
+// 	if(comment.id === 823423){
+// 		console.log(comment.text);
+// 		return true;
+// 	}
+// })
+// console.log(comment);
+
+// variant 2
+// const comment = comments.find((comment) => {
+// 	return comment.id === 823423;
+// });
+// console.log(comment);
+
+// variant 3
+// const comment = comments.find(comment => comment.id === 823423);
+// console.log(comment);
+
+// find the comment with the id 823423 and delete it 
+
