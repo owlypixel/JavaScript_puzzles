@@ -158,4 +158,6 @@ const people = [
 // console.log(comment);
 
 // find the comment with the id 823423 and delete it 
-
+// const index = comments.findIndex(comment => comment.id === 823423);
+// comments.splice(index, 1);
+// console.table(comments);
