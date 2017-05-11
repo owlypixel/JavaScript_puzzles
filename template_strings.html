@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Template Strings!</title>
+</head>
+<body>
+	<div id="owl"></div>
+	<br>
+	<hr>
+	<div id="list"></div>
+	<br>
+	<hr>
+	<div id="songs"></div>
+	<br>
+	<hr>
+	<div id="beer"></div>
+
+
+<script>
+	var name = "Cherry";
+	var age = 4;
+	var sentence = 'My owl ' + name + ' is ' + age * 2 + ' years old.';
+	console.log(sentence);
+	var sentence2 = `My owl ${name} is ${age * 2} years old.`;
+	console.log(sentence);
+	
+	const owl = {
+		name: 'Owly',
+		job: 'hunter',
+		city: 'Washmenghton',
+		bio: 'I just dont want to tell you this, but there are owl replicants in the development'
+	}
+	const markup = `
+		<div class="owl">
+			<h2>
+				${ owl.name }
+				<span class="job">${ owl.job }</span>
+			</h2>
+			<p class="location">${ owl.city }</p>
+			<p class="bio">${ owl.bio }</p>
+
+		</div>
+
+	`;
+	document.getElementById('owl').innerHTML = markup;
+
+
+	const owls = [
+		{name: "Waldo", age: 12},
+		{name: "Corgie", age: 2},
+		{name: "Sally", age: 5}
+	];
+	const newmarkup = `
+		<ul class="owls">
+			${owls.map(owl => `<li>${owl.name} is ${owl.age}</li>`).join('')}
+		</ul>
+	`;
+	document.getElementById('list').innerHTML = newmarkup;
+
+	const songs = {
+		name: 'Winter in Osaka',
+		artist: 'Tony Macalpine',
+		featuring: 'Deen Castronovo'
+	};
+
+	const songmarkup = `
+		<div class="song">
+			<p>
+				${songs.name} - ${songs.artist}
+				${songs.featuring ? `(featuring: ${songs.featuring})` : '' }
+				
+			</p>
+		</div>
+	`;
+
+	document.getElementById('songs').innerHTML = songmarkup;
+
+	const beer = {
+		name: 'Wittley Wag',
+		brewery: "Chelsphemir St. Cruise",
+		keywords: ['sip', 'josh', 'blind', 'hose', 'mole', 'rat']
+	};
+
+	renderKeywords = function(keywords){
+		return `
+			<ul>
+			    ${keywords.map(keyword => `<li>${keyword}</li>`).join('')}
+			</ul>
+		`;
+	}
+
+	const beermarkup = `
+		<ul class="beer">
+			<h2>${beer.name}</h2>
+			<p class="brewery">${beer.brewery}</p>
+			${renderKeywords(beer.keywords)}
+		</ul>
+	`;
+
+	document.getElementById('beer').innerHTML = beermarkup;
+
+
+
+</script>
+
+</body>
+</html>
