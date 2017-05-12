@@ -2,6 +2,11 @@
 <html>
 <head>
 	<title>Template Strings!</title>
+	<style>
+		.hl {
+			background: red;
+		}
+	</style>
 </head>
 <body>
 	<div id="owl"></div>
@@ -14,6 +19,10 @@
 	<br>
 	<hr>
 	<div id="beer"></div>
+	<br>
+	<hr>
+	<div id="spook"></div>
+
 
 
 <script>
@@ -98,6 +107,20 @@
 	`;
 
 	document.getElementById('beer').innerHTML = beermarkup;
+
+	function highlight(strings, ...values){
+		let str = '';
+		strings.forEach((string, i) => {
+			str += `${string} <span contenteditable class="hl">${values[i] || ''}</span>`;
+		})
+		return str;
+	};
+	const name1 = 'Jerry';
+	const age1 = 20;
+	const word = highlight`My owls name is ${name1} and he is ${age1} years old.`;
+	// console.log(word);
+	document.getElementById('spook').innerHTML = word;
+
 
 
 
