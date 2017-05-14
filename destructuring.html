@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Destructuring</title>
+</head>
+<body>
+<script>
+	const bird = {
+		first: 'Owly',
+		last: 'Master',
+		country: 'England',
+		city: 'Hamilton',
+		twit: '@owlypixel'
+	}
+	
+	const {first, last, twit} = bird;
+	console.log(first, last, twit)
+
+	const bird2 = {
+		first: 'Owly',
+		last: 'Master',
+		links: {
+			social: {
+				twitter: 'https://twitter.com/owlypixel',
+				facebook: 'https://facebook.com/owlypixel'
+			},
+			web: {
+				blog: 'https://owlypixel.com'
+			}
+		}
+	}
+
+	const { twitter, facebook } = bird2.links.social;
+	console.log(twitter, facebook);
+	const { twitter:tweet, facebook:face} = bird2.links.social;
+	console.log(twitter, facebook);
+
+	const settings = {width: 300, color:'black'}; //height, fontSize
+	const {width = 100, height = 200, color = 'blue', fontSize = 25} = settings;
+	console.log(width, height, color, fontSize);
+
+	const {l: left = 400, r: right = 300 } = {l: 800};
+	console.log(left, right)
+
+</script>
+
+</body>
+</html>
