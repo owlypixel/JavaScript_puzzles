@@ -42,6 +42,53 @@
 	const {l: left = 400, r: right = 300 } = {l: 800};
 	console.log(left, right)
 
+	// Destructuring arrays
+
+	const det = ['globb', 'shomle', 'ass', 345];
+	const [name, family, type, num] = det;
+	console.log(name, family, type, num);
+
+	const dup = 'ibanez, gibson, flying-v, 234';
+	const [boss, shit, norm, what] = dup.split(',');
+	console.log(boss, shit, norm, what);
+
+	// using rest operator
+
+	const team = ['Clemens', 'Dillon', 'Golic', 'Rains', 'Murphy', 'Jude'];
+	const [man, assistant, ...prisoners] = team;
+	console.log(man, assistant, prisoners);
+
+	// swapping variables with destructuring
+
+	let chick = 'Ripley';
+	let monster = 'Alien';
+
+	console.log(chick, monster);
+	[chick, monster] = [monster, chick];
+	console.log(chick, monster);
+
+	// destructuring function and multiple returns
+	function convertCurrency(amount){
+		const converted = {
+			USD: amount * 0.76,
+			GBP: amount * 0.53,
+			AUD: amount * 1.01,
+			MEX: amount * 13.30
+		};
+		return converted;
+	}
+
+	const hundo = convertCurrency(100);
+	console.log(hundo);
+	const {USD, GBP, AUD, MEX} = convertCurrency(200);
+	console.log(USD, GBP, AUD, MEX);
+
+	function tipCalculator({total, tip = 0.15, tax = 0.13}){
+		return total + (tip * total) + (tax * total);
+	}
+	const bill = tipCalculator({total: 200, tip: 0.2, tax: 0.3});
+	console.log(bill);
+
 </script>
 
 </body>
