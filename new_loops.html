@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New loops</title>
+</head>
+<body>
+<script>
+
+	const team = ['Clemens', 'Dillon', 'Golic', 'Rains', 'Murphy', 'Jude'];
+
+	//old style
+	// for (let i = 0; i < team.length; i++){
+	// 	console.log(team[i]);
+	// }
+
+	// team.forEach((msg) => {
+	// 	console.log(msg)
+	// });
+	
+	// for (const man in team) {
+	// 	console.log(team[man]);
+	// }
+
+	// new cool style
+	for (const man of team){
+		console.log(man);
+		if (man === 'Rains'){
+			break;
+		}
+	}
+
+</script>
+
+</body>
+</html>
