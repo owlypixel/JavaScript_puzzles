@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New array methods</title>
+</head>
+<body>
+	<div class="owls">
+		<p>Globby</p>
+		<p>Smally</p>
+		<p>Danny</p>
+	</div>
+
+
+<script>
+	// longer variant
+	// const owls = document.querySelectorAll('.owls p');
+	// console.log(owls);
+	// const owlsArray = Array.from(owls);
+	// console.log(owlsArray);
+	// const names = owlsArray.map(person => person.textContent);
+	// console.log(names);
+
+
+	// oneliner
+	// const owls = Array.from(document.querySelectorAll('.owls p'));
+
+	// map function in the Array.from()
+	// const owls = document.querySelectorAll('.owls p');
+	// const owlsArray = Array.from(owls, owl => {
+	// 	console.log(owl);
+	// 	return owl.textContent;
+	// });
+	// console.log(owlsArray);
+
+	function sumAll(){
+		// console.log(arguments); 
+		const nums = Array.from(arguments);
+		return nums.reduce((prev,next) => prev + next, 0)
+	}
+	console.log(sumAll(3,6,3,10));
+
+	const bof = Array.of(2,'hello', 45,324, 346, 5);
+	console.log(bof);
+
+
+</script>
+
+</body>
+</html>

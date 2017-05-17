@@ -4,6 +4,17 @@
 	<title>New loops</title>
 </head>
 <body>
+	<p>Hello, I'm an owl 01</p>
+	<p>Hello, I'm an owl 02</p>
+	<p>Hello, I'm an owl 03</p>
+	<p>Hello, I'm an owl 04</p>
+	<p>Hello, I'm an owl 05</p>
+	<p>Hello, I'm an owl 06</p>
+	<p>Hello, I'm an owl 07</p>
+	<p>Hello, I'm an owl 08</p>
+	<p>Hello, I'm an owl 09</p>
+	<p>Hello, I'm an owl 10</p>
+
 <script>
 
 	const team = ['Clemens', 'Dillon', 'Golic', 'Rains', 'Murphy', 'Jude'];
@@ -22,11 +33,44 @@
 	// }
 
 	// new cool style
-	for (const man of team){
-		console.log(man);
-		if (man === 'Rains'){
-			break;
-		}
+	// for (const man of team){
+	// 	console.log(man);
+	// 	if (man === 'Rains'){
+	// 		break;
+	// 	}
+	// }
+
+	// iterating over array iterators
+	// for (const [man, i] of team.entries()){
+	// 	console.log(`${i} is the ${man + 1} item`);
+	// }
+
+	// function addUpNumbers(){
+	// 	console.log(arguments);
+	// 	let total = 0;
+	// 	for (const num of arguments){
+	// 		total += num;
+	// 	}
+	// 	console.log(total);
+	// }
+
+	// addUpNumbers(3,24,236, 23)
+
+	// iterating over strings
+	// const myString = 'We are the owls!';
+
+	// for(const letter of myString){
+	// 	console.log(letter);
+	// }
+
+	// iterating over the DOM collections
+	const pg = document.querySelectorAll('p');
+	console.log(pg);
+
+	for (const paragraph of pg){
+		paragraph.addEventListener('click', function(){
+			console.log(this.textContent);
+		})
 	}
 
 </script>
