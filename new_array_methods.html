@@ -12,6 +12,8 @@
 
 
 <script>
+
+	// ---------Array.from()--------
 	// longer variant
 	// const owls = document.querySelectorAll('.owls p');
 	// console.log(owls);
@@ -32,16 +34,68 @@
 	// });
 	// console.log(owlsArray);
 
-	function sumAll(){
-		// console.log(arguments); 
-		const nums = Array.from(arguments);
-		return nums.reduce((prev,next) => prev + next, 0)
-	}
-	console.log(sumAll(3,6,3,10));
+	// function sumAll(){
+	// 	// console.log(arguments); 
+	// 	const nums = Array.from(arguments);
+	// 	return nums.reduce((prev,next) => prev + next, 0)
+	// }
+	// console.log(sumAll(3,6,3,10));
 
-	const bof = Array.of(2,'hello', 45,324, 346, 5);
-	console.log(bof);
+	// ---------Array.of()--------
+	// const bof = Array.of(2,'hello', 45,324, 346, 5);
+	// console.log(bof);
 
+	// ---------.find()--------
+	const posts = [
+     {
+        "code":"BAcyDyQwcXX",
+        "caption":"Lunch #hamont",
+        "likes":56,
+        "id":"1161022966406956503",
+        "display_src":"https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/e35/12552326_495932673919321_1443393332_n.jpg"
+     },
+     {
+        "code":"BAhvZrRwcfu",
+        "caption":"Tried poke for the first time at @pokehbar. Delicious! It's like a bowl of sushi",
+        "likes":30,
+        "id":"1162418651480049646",
+        "display_src":"https://scontent.cdninstagram.com/hphotos-xpa1/t51.2885-15/e35/12501993_1504179163220771_2060674913_n.jpg"
+     },
+     {
+        "code":"FpTyHQcau",
+        "caption":"I'm in Austin for a conference and doing some training. Enjoying some local brew with my baby.",
+        "likes":82,
+        "id":"1118481761857291950",
+        "display_src":"https://scontent.cdninstagram.com/hphotos-xpt1/t51.2885-15/e35/11326072_550275398458202_1726754023_n.jpg"
+     }
+  ];
+
+  // long variant
+  // const post = posts.find(post => {
+  // 	console.log(post.code);
+  // 	if(post.code === 'FpTyHQcau'){
+  // 		return true;
+  // 	} else {
+  // 		return false;
+  // 	}
+  // })
+
+  	// oneliner
+	// const post = posts.find(post => post.code === 'FpTyHQcau');
+	// console.log(post);
+
+   // long variant
+   // const postIndex = posts.findIndex((post) => {
+   // 	if (post.code === 'FpTyHQcau'){
+   // 		return true;
+   // 	}
+   // 	return false;
+   // })
+   // console.log(postIndex);
+
+   // oneliner
+   // const postIndex = posts.findIndex(post => post.code === 'FpTyHQcau')
+   // console.log(postIndex);
 
 </script>
 
