@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spread and rest operators</title>
+</head>
+<body>
+<script>
+	const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
+	const specialty = ['Meatzza', 'Spicy Mama', 'Margherita'];
+
+	const newarray = [...featured, 'vega', ...specialty];
+	console.log(newarray);	
+	const anotherarray = [...newarray];
+	console.log(anotherarray);
+</script>
+
+
+</body>
+</html>
