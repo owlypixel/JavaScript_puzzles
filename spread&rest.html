@@ -3,15 +3,81 @@
 <head>
 	<title>Spread and rest operators</title>
 </head>
+<style>
+	.spreads{
+		font-size: 50px;
+		display: flex;
+		text-align: center;
+		justify-content: center;
+	}
+	.spreads span{
+		display: inline-block;
+	}
+	.spreads span:hover {
+		cursor: pointer;
+		transition: all .3s;
+		transform: translateY(-5px) rotate(20deg) scale(2);
+	}
+</style>
 <body>
+	<h2 class="spreads">NEON</h2>
+	<h2 class="people">
+		<p>John</p>
+		<p>Kate</p>
+		<p>Pete</p>
+		<p>Claire</p>
+	</h2>
+
 <script>
 	const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
 	const specialty = ['Meatzza', 'Spicy Mama', 'Margherita'];
 
-	const newarray = [...featured, 'vega', ...specialty];
-	console.log(newarray);	
-	const anotherarray = [...newarray];
-	console.log(anotherarray);
+	// const newarray = [...featured, 'vega', ...specialty];
+	// console.log(newarray);	
+	// const anotherarray = [...newarray];
+	// console.log(anotherarray);
+
+	// task 1 - my variant
+	// let el = document.querySelector('.spreads');
+	// console.log(el);
+	// let test = [...el.textContent].map(ch => '<span>' + ch + '</span>').join('');
+	// el.innerHTML = test;
+	// console.log(el)
+
+	// task 1 - bosvariant
+	// let heading = document.querySelector('.spreads');
+	// heading.innerHTML = wrapinSpan(heading.textContent);
+	// function wrapinSpan(word){
+	// 	return [...word].map(ch => `<span>${ch}</span>`).join('');
+	// }
+
+	// create an array from some of the elements on the page
+	// let elems = [...document.querySelectorAll('.people p')];
+	// let names = elems.map(el => el.textContent);
+	// console.log(elems, names);
+
+	// create an array of the property on an object
+	const dish = {
+		pizzaName: 'Dish',
+		size: 'Medium',
+		ingridients: ['Marinara', 'Coliara', 'Brullettte', 'Seramaki']
+	}
+	const shoppingList = ['Milk', 'Flour', ...dish.ingridients];
+	console.log(shoppingList);
+
+	// remove an object from array
+	const comments = [
+	    { id: 209384, text: 'I love your dog!' },
+	    { id: 523423, text: 'Cuuute! 🐐' },
+	    { id: 632429, text: 'You are so dumb' },
+	    { id: 192834, text: 'Nice work on this shift!' },
+	];
+	const id = 632429;
+	const commentIndex = comments.findIndex(prop => prop.id === id );
+	console.log(commentIndex);
+	const newcomments = [...comments.slice(0, commentIndex), ...comments.slice(commentIndex + 1)];
+	console.log(newcomments);
+
 </script>
 
 

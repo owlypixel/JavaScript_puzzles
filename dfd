@@ -1,0 +1,103 @@
+[1mdiff --git a/mix&match.html b/mix&match.html[m
+[1mindex 16906e2..7ff9788 100644[m
+[1m--- a/mix&match.html[m
+[1m+++ b/mix&match.html[m
+[36m@@ -24,4 +24,7 @@[m [mNew Array methods[m
+  - find out if some or all items meet the criteria  (.some(), .every())[m
+ Spread and Rest[m
+  - take every item of an iterable and spread into other array[m
+[32m+[m[32m - create an array from some of the elements on the page[m[41m[m
+[32m+[m[32m - create an array of the property on an object[m[41m[m
+[32m+[m[32m - remove an object from array[m[41m[m
+  verb noun with technique[m
+\ No newline at end of file[m
+[1mdiff --git a/spread&rest.html b/spread&rest.html[m
+[1mindex ec05531..f735fbe 100644[m
+[1m--- a/spread&rest.html[m
+[1m+++ b/spread&rest.html[m
+[36m@@ -3,15 +3,81 @@[m
+ <head>[m
+ 	<title>Spread and rest operators</title>[m
+ </head>[m
+[32m+[m[32m<style>[m[41m[m
+[32m+[m	[32m.spreads{[m[41m[m
+[32m+[m		[32mfont-size: 50px;[m[41m[m
+[32m+[m		[32mdisplay: flex;[m[41m[m
+[32m+[m		[32mtext-align: center;[m[41m[m
+[32m+[m		[32mjustify-content: center;[m[41m[m
+[32m+[m	[32m}[m[41m[m
+[32m+[m	[32m.spreads span{[m[41m[m
+[32m+[m		[32mdisplay: inline-block;[m[41m[m
+[32m+[m	[32m}[m[41m[m
+[32m+[m	[32m.spreads span:hover {[m[41m[m
+[32m+[m		[32mcursor: pointer;[m[41m[m
+[32m+[m		[32mtransition: all .3s;[m[41m[m
+[32m+[m		[32mtransform: translateY(-5px) rotate(20deg) scale(2);[m[41m[m
+[32m+[m	[32m}[m[41m[m
+[32m+[m[32m</style>[m[41m[m
+ <body>[m
+[32m+[m	[32m<h2 class="spreads">NEON</h2>[m[41m[m
+[32m+[m	[32m<h2 class="people">[m[41m[m
+[32m+[m		[32m<p>John</p>[m[41m[m
+[32m+[m		[32m<p>Kate</p>[m[41m[m
+[32m+[m		[32m<p>Pete</p>[m[41m[m
+[32m+[m		[32m<p>Claire</p>[m[41m[m
+[32m+[m	[32m</h2>[m[41m[m
+[32m+[m[41m[m
+ <script>[m
+ 	const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];[m
+ 	const specialty = ['Meatzza', 'Spicy Mama', 'Margherita'];[m
+ [m
+[31m-	const newarray = [...featured, 'vega', ...specialty];[m
+[31m-	console.log(newarray);	[m
+[31m-	const anotherarray = [...newarray];[m
+[31m-	console.log(anotherarray);[m
+[32m+[m	[32m// const newarray = [...featured, 'vega', ...specialty];[m[41m[m
+[32m+[m	[32m// console.log(newarray);[m[41m	[m
+[32m+[m	[32m// const anotherarray = [...newarray];[m[41m[m
+[32m+[m	[32m// console.log(anotherarray);[m[41m[m
+[32m+[m[41m[m
+[32m+[m	[32m// task 1 - my variant[m[41m[m
+[32m+[m	[32m// let el = document.querySelector('.spreads');[m[41m[m
+[32m+[m	[32m// console.log(el);[m[41m[m
+[32m+[m	[32m// let test = [...el.textContent].map(ch => '<span>' + ch + '</span>').join('');[m[41m[m
+[32m+[m	[32m// el.innerHTML = test;[m[41m[m
+[32m+[m	[32m// console.log(el)[m[41m[m
+[32m+[m[41m[m
+[32m+[m	[32m// task 1 - bosvariant[m[41m[m
+[32m+[m	[32m// let heading = document.querySelector('.spreads');[m[41m[m
+[32m+[m	[32m// heading.innerHTML = wrapinSpan(heading.textContent);[m[41m[m
+[32m+[m	[32m// function wrapinSpan(word){[m[41m[m
+[32m+[m	[32m// 	return [...word].map(ch => `<span>${ch}</span>`).join('');[m[41m[m
+[32m+[m	[32m// }[m[41m[m
+[32m+[m[41m[m
+[32m+[m	[32m// create an array from some of the elements on the page[m[41m[m
+[32m+[m	[32m// let elems = [...document.querySelectorAll('.people p')];[m[41m[m
+[32m+[m	[32m// let names = elems.map(el => el.textContent);[m[41m[m
+[32m+[m	[32m// console.log(elems, names);[m[41m[m
+[32m+[m[41m[m
+[32m+[m	[32m// create an array of the property on an object[m[41m[m
+[32m+[m	[32mconst dish = {[m[41m[m
+[32m+[m		[32mpizzaName: 'Dish',[m[41m[m
+[32m+[m		[32msize: 'Medium',[m[41m[m
+[32m+[m		[32mingridients: ['Marinara', 'Coliara', 'Brullettte', 'Seramaki'][m[41m[m
+[32m+[m	[32m}[m[41m[m
+[32m+[m	[32mconst shoppingList = ['Milk', 'Flour', ...dish.ingridients];[m[41m[m
+[32m+[m	[32mconsole.log(shoppingList);[m[41m[m
+[32m+[m[41m[m
+[32m+[m	[32m// remove an object from array[m[41m[m
+[32m+[m	[32mconst comments = [[m[41m[m
+[32m+[m	[32m    { id: 209384, text: 'I love your dog!' },[m[41m[m
+[32m+[m	[32m    { id: 523423, text: 'Cuuute! 🐐' },[m[41m[m
+[32m+[m	[32m    { id: 632429, text: 'You are so dumb' },[m[41m[m
+[32m+[m	[32m    { id: 192834, text: 'Nice work on this shift!' },[m[41m[m
+[32m+[m	[32m];[m[41m[m
+[32m+[m	[32mconst id = 632429;[m[41m[m
+[32m+[m	[32mconst commentIndex = comments.findIndex(prop => prop.id === id );[m[41m[m
+[32m+[m	[32mconsole.log(commentIndex);[m[41m[m
+[32m+[m	[32mconst newcomments = [...comments.slice(0, commentIndex), ...comments.slice(commentIndex + 1)];[m[41m[m
+[32m+[m	[32mconsole.log(newcomments);[m[41m[m
+[32m+[m[41m[m
+ </script>[m
+ [m
+ [m
