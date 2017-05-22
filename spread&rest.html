@@ -78,6 +78,34 @@
 	const newcomments = [...comments.slice(0, commentIndex), ...comments.slice(commentIndex + 1)];
 	console.log(newcomments);
 
+	// spread into a function
+	const owlets = ['Chapi', 'Owli', 'Whitey'];
+	const newlets = ['Greeni', 'Mosley'];
+
+	owlets.push(...newlets);
+	console.log(owlets);
+
+	// spread arguments of a function
+	const owlies = ['Buddy', 'Slappy'];
+
+	function sayOwl(firstowl, secondowl){
+		// alert(`Hello, i'm an ${firstowl} ${secondowl}`)
+	}
+	sayOwl(...owlies);
+
+	// rest param
+	function convertCurrencies(rate, ...amounts){
+		console.log(rate, amounts);
+		return amounts.map(amount => amount * rate);
+	}
+	const amounts = convertCurrencies(1.54, 10, 15, 25);
+	console.log(amounts);
+
+	// destructuring
+	const runner = ['Owlypixel', 111, 5, 3, 12, 35];
+	const [name, identifier, ...km] = runner;
+	console.log(name, identifier, km); 
+
 </script>
 
 
