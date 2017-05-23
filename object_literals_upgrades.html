@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object literals upgrades</title>
+</head>
+<body>
+<script>
+
+	// put variables into Object
+	const first = 'owlypixel';
+	const last = 'blut';
+	const age = 2;
+	const breed = 'Great owly whale';
+
+	const owl = {
+		firstName: first, 
+		last, 
+		age, 
+		breed,
+		pals: ['greenie', 'blomberg', 'smokey'] 
+	};
+	console.log(owl);
+
+	// when function definition is inside of an Object we can omit the word 'function'
+	const modal = {
+		create(selector){
+
+		},
+		open(property){
+
+		},
+		close(message){
+
+		},
+	}
+
+	// computed property names
+	// make variables be the key and value of an object
+	const key = 'pocketColor';
+	const value = 'yellow';	
+
+
+	function invertColor(color) {
+	     return '#' + ("000000" + (0xFFFFFF ^ parseInt(color.substring(1),16)).toString(16)).slice(-6);
+	}
+
+	const tShirt = {
+		[key]: value,
+		[`${key}Opposite`]: invertColor(value)
+	}
+	console.log(tShirt);
+
+	// make an object out of two arrays
+	const keys = ['size', 'color', 'weight'];
+	const values = ['medium', 'red', 300];
+
+	const obj = {
+		[keys.shift()]: values.shift(),
+		[keys.shift()]: values.shift(),
+		[keys.shift()]: values.shift(),
+	}
+	console.log(obj);
+</script>
+
+</body>
+</html>
