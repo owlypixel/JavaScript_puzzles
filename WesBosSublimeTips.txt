@@ -1,0 +1,3 @@
+- Indent block: Ctrl + [ ]
+- Use multiple cursors to select: Ctrl + left doubleclick
+- Split lines: Ctrl + Shift + L
