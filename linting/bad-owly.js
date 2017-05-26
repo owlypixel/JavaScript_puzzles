@@ -1,39 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Promises</title>
-</head>
-<body>
-<script>
-// console.log('Going to fetch the latest posts from owlypixel blog');
-// const posts = fetch('https://owlypixel.com/wp-json/wp/v2/posts');
-// console.log('Done');
-// console.log(posts);
-
-// const postsPromise = fetch('https://owlypixel.com/wp-json/wp/v2/posts');
-// postsPromise
-// 	.then(data => data.json())
-// 	.then(data => {console.log(data)})
-// 	.catch((err) => {
-// 		console.error(err);
-// 	});
-
-// building Promises
-// const p = new Promise((resolve, reject) => {
-// 	setTimeout(() => {
-// 		reject(Error("Owly is cool"));
-// 	}, 1000);
-// })
-
-// p
-// 	.then(data => {
-// 		console.log(data);
-// 	})
-// 	.catch(err => {
-// 		console.error(err);
-// 	})
-
-//chaining promises
  const posts = [
     { title: 'I love JavaScript', author: 'Wes Bos', id: 1 },
     { title: 'CSS!', author: 'Chris Coyier', id: 2 },
@@ -84,8 +48,3 @@ getPostById(22)
 
 
 	
-
-</script>
-
-</body>
-</html>
