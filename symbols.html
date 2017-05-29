@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Symbols</title>
+</head>
+<body>
+<script>
+// 7-th primitive type
+const owl = Symbol("OWL");
+const bird = Symbol("OWL");
+const ClassRoom = {
+	[Symbol('Monica')]: { grade: 50, gender: 'female'},
+	[Symbol('Oliver')]: { grade: 36, gender: 'male'},
+	[Symbol('Oliver')]: { grade: 36, gender: 'male'}
+}
+
+const syms = Object.getOwnPropertySymbols(ClassRoom);
+console.log(syms);
+const data = syms.map(sym => ClassRoom[sym]);
+console.log(data);
+
+
+</script>
+
+</body>
+</html>
