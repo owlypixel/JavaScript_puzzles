@@ -3,3 +3,4 @@
 - npm install babel-cli babel-preset-es2015 --save
 - "babel": "babel app.js --watch --out-file app-compiled.js"
 - create app.js and write some es6 there
+- add .babelrc file (can do this in package.json)

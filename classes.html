@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prototypal inheritance and classes</title>
+</head>
+<body>
+	<script>
+
+	// The old ways
+	// function Owl(name, type){
+	// 	this.name = name;
+	// 	this.type = type;
+	// }
+	// Owl.prototype.hoot = function(){
+	// 	console.log(`Hoot, hoot, my name is ${this.name}`);
+	// }
+	// Owl.prototype.blink = function(){
+	// 	console.log(`Here we go, I've just blinked!`);
+	// }
+
+	// const pixel = new Owl('Pixel', 'Snowy');
+	// const clapsi = new Owl('Clapsi', 'Purple');
+
+	// The new classes are here!
+	class Owl{
+		constructor(name, type){
+			this.name = name;
+			this.type = type;	
+		}
+		hoot(){
+			console.log(`Hoot, hoot, my name is ${this.name}`);
+		}
+		blink(){
+			console.log(`Here we go, I've just blinked!`);
+		}
+		// static methods
+		static info(){
+			console.log("I'm a good owl, definitely worth your money.");
+		}
+		// getters and setters
+		get description(){
+			console.log(`${this.name} is a wonderful ${this.type} owl`);
+		}
+		set nickname(value){
+			this.nick = value.trim();
+		}
+		get nickname(){
+			return this.nick;
+		}
+	}
+
+	const pixel = new Owl('Pixel', 'Snowy');
+	const clapsi = new Owl('Clapsi', 'Purple');
+
+
+	</script>
+</body>
+</html>
