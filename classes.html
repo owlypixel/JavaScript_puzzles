@@ -52,6 +52,57 @@
 	const pixel = new Owl('Pixel', 'Snowy');
 	const clapsi = new Owl('Clapsi', 'Purple');
 
+	// extending classes
+	class Animal{
+		constructor(name){
+			this.name = name;
+			this.thirst = 100;
+			this.belly = [];
+		}
+		drink(){
+			this.thirst -= 10;
+			return this.thirst;
+		}
+		eat(food){
+			this.belly.push(food);
+			return this.belly;
+		}
+	}
+
+	class Mouse extends Animal{
+		constructor(name, type){
+			super(name);
+			this.type = type;
+		}
+		squeal(){
+			console.log(`Squeal, squeal, I'm a seal)))`);
+		}
+	}
+
+	const ape = new Animal('Max');
+	const jerry = new Mouse('Jerry', 'regular');
+
+	// extending array
+	class MoviesCollection extends Array{
+		constructor(name, ...items){
+			super(...items);
+			this.name = name;
+		}
+		add(movie){
+			this.push(movie);
+		}
+		topRated(limit = 10){
+			return this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit);
+		}
+
+	}
+	const movies = new MoviesCollection('Owly\'s favorite movies',
+		{name: "Alien", stars: 20},
+		{name: "Aliens", stars: 23},
+		{name: "Alien 3", stars: 10},
+		{name: "Alien Covenant", stars: 2}
+	);
+
 
 	</script>
 </body>
