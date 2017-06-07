@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Generators</title>
+</head>
+<body>
+	<script>
+	function* listOwls(){
+		yield 'Curly';
+		yield 'Globby';
+		yield 'Fireworky';
+	}
+
+	const owls = listOwls();
+	// console.log(owls.next());
+
+	const birds = [
+		{ first: 'Owly' },
+		{ last: 'Master' },
+		{ country: 'England' },
+		{ city: 'Hamilton' },
+		{ twit: '@owlypixel' }
+	];
+
+	function* loop(array){
+		console.log(birds);
+		for (const item of array){
+			yield item;
+		}
+	}
+
+	const birdGenerator = loop(birds);
+	</script>
+</body>
+</html>

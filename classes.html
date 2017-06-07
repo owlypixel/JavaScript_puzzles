@@ -5,7 +5,6 @@
 </head>
 <body>
 	<script>
-
 	// The old ways
 	// function Owl(name, type){
 	// 	this.name = name;
@@ -17,10 +16,8 @@
 	// Owl.prototype.blink = function(){
 	// 	console.log(`Here we go, I've just blinked!`);
 	// }
-
 	// const pixel = new Owl('Pixel', 'Snowy');
 	// const clapsi = new Owl('Clapsi', 'Purple');
-
 	// The new classes are here!
 	class Owl{
 		constructor(name, type){
@@ -48,10 +45,8 @@
 			return this.nick;
 		}
 	}
-
 	const pixel = new Owl('Pixel', 'Snowy');
 	const clapsi = new Owl('Clapsi', 'Purple');
-
 	// extending classes
 	class Animal{
 		constructor(name){
@@ -68,7 +63,6 @@
 			return this.belly;
 		}
 	}
-
 	class Mouse extends Animal{
 		constructor(name, type){
 			super(name);
@@ -78,10 +72,8 @@
 			console.log(`Squeal, squeal, I'm a seal)))`);
 		}
 	}
-
 	const ape = new Animal('Max');
 	const jerry = new Mouse('Jerry', 'regular');
-
 	// extending array
 	class MoviesCollection extends Array{
 		constructor(name, ...items){
@@ -94,7 +86,6 @@
 		topRated(limit = 10){
 			return this.sort((a, b) => (a.stars > b.stars ? -1 : 1)).slice(0, limit);
 		}
-
 	}
 	const movies = new MoviesCollection('Owly\'s favorite movies',
 		{name: "Alien", stars: 20},
@@ -102,8 +93,6 @@
 		{name: "Alien 3", stars: 10},
 		{name: "Alien Covenant", stars: 2}
 	);
-
-
 	</script>
 </body>
 </html>
