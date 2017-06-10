@@ -47,6 +47,27 @@
 	const dataGen = steps();
 	dataGen.next();
 
+	// looping generators with for of
+	function* lyrics(){
+		yield `Love of my life, you've hurt me,`;
+		yield `You've broken my heart and now you leave me.`;
+		yield `Love of my life can't you see,`;
+		yield `Bring it back, bring it back,`;
+		yield `Don't take it away from me because you don't know what it means to me.`;
+		yield `Love of my life, don't leave me,`;
+		yield `You've taken my love, you now desert me,`;
+		yield `You've stolen my love, you now desert me,`;
+		yield `Love of my life, can't you see?`;
+		yield `Bring it back, bring it back,`;
+		yield `Don't take it away from me because you don't know what it means to me.`;
+	}
+
+	const love = lyrics();
+	love.next();
+	for (const line of love){
+		console.log(line);
+	}
+
 	</script>
 </body>
 </html>
