@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Set</title>
+</head>
+<body>
+	<script>
+		const owls = new Set();
+		owls.add('Gabi');
+		owls.add('Molly');
+		owls.add('Strimmy');
+		console.log(owls.size);
+		owls.delete('Molly');
+		console.log(owls.size);
+		// owls.clear();
+		// console.log(owls);
+		const them = owls.values();
+		console.log(them.next());
+		console.log(them.next());
+
+		for (const owl of owls){
+			console.log(owl);
+		}
+		// ------------------
+		const birds = new Set(['Flamingo', 'Straus', 'Aist']);
+		console.log(birds);
+		const frogs = ['Black', 'Green', 'Yellow'];
+		const frogSet = new Set(frogs);
+		console.log(frogSet);
+
+	</script>
+</body>
+</html>
