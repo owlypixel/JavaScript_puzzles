@@ -28,6 +28,24 @@
 		const frogSet = new Set(frogs);
 		console.log(frogSet);
 
+		// Brunch
+		const brunch = new Set();
+		brunch.add('Owl');
+		brunch.add('Sarah');
+		brunch.add('Miles');
+
+		const line = brunch.values();
+		console.log(line.next().value);
+		console.log(line.next().value);
+
+		brunch.add('Dennis');
+		brunch.add('Greg');
+		console.log(line.next().value);
+		console.log(line.next().value);
+		console.log(line.next().value);
+		
+
+
 	</script>
 </body>
 </html>
