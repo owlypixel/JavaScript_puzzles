@@ -44,7 +44,15 @@
 		console.log(line.next().value);
 		console.log(line.next().value);
 		
+		// weak sets
+		let owl1 = {name: 'Owly', age: 500};
+		let owl2 = {name: 'Owlytwister', age: 5};
 
+		const weakStrap = new WeakSet([owl1, owl2]);
+		console.log(weakStrap);
+		owl1 = null;
+		console.log(weakStrap);
+		
 
 	</script>
 </body>
