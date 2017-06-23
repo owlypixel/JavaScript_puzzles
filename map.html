@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Map</title>
+</head>
+<body>
+	<script>
+		const owls = new Map();
+		
+		owls.set('Owly', 9);
+		owls.set('Globby', 3);
+		owls.set('Peggy', 1);
+		
+		console.log(owls.has('Owly'));
+		console.log(owls.get('Globby'));
+		console.log(owls.delete('Peggy'));
+		console.log(owls.has('Peggy'));
+
+		owls.forEach((val, key) => console.log(val, key));
+
+		for (const [key, val] of owls){
+			console.log(key, val);
+		}
+		owls.clear();
+
+	</script>
+</body>
+</html>
