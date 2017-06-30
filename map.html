@@ -4,6 +4,11 @@
 	<title>Map</title>
 </head>
 <body>
+		<button>OWLY</button>
+		<button>Belly</button>
+		<button>Squashy</button>
+		<button>Hloe</button>
+
 	<script>
 		const owls = new Map();
 		
@@ -22,6 +27,17 @@
 			console.log(key, val);
 		}
 		owls.clear();
+		// Map metadata with DOM node keys
+		const clickCounts = new Map();
+		const buttons = document.querySelectorAll('button');
+		buttons.forEach(button => {
+			clickCounts.set(button, 0);
+			button.addEventListener('click', function(){
+				const val = clickCounts.get(this);
+				console.log(val);
+				clickCounts.set(this, val + 1);
+			})
+		})
 
 	</script>
 </body>
